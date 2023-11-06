@@ -1,4 +1,10 @@
+@font-face {
+    font-family: FjallaOne;
+    src: url(fonts/Fjalla_One/FjallaOne-Regular.ttf);
+  }
+
 body {
+    background-color: skyblue;
     width: 100vw;
     height: 95vh;
     display: flex;
@@ -7,12 +13,24 @@ body {
     align-items: center;
 }
 
+h1 {
+    color: turquoise;
+    font-size: 80px;
+    padding: 10px;
+    margin: 10px;
+    -webkit-text-stroke: 1px black;
+    font-family: FjallaOne;
+}
+
 #squares {
     height: 70vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    border: 5px solid black;
+    border-radius: 10px;
+    background-color: white;
 }
 
 #rowDiv {
@@ -29,8 +47,10 @@ body {
 
 button {
     font-size: 30px;
-    background-color: aqua;
+    background-color: turquoise;
     color: black;
+    border: 2px solid black;
     border-radius: 12px;
-    margin-bottom: 60px;
+    margin: 30px;
+    font-family: FjallaOne;
 }
