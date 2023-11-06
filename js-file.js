@@ -13,7 +13,6 @@ function createGrid(dimension) {
             square.addEventListener('mouseover', function(event) {
                 const source = event.target;
                 source.style.backgroundColor = "blue";
-                console.log("happened");
             });
         }
     }
@@ -21,9 +20,9 @@ function createGrid(dimension) {
 
 const dimensionButton = document.querySelector("button");
 dimensionButton.addEventListener('click', () => {
-    let val = Number(prompt("New Dimension [0,100]: "));
-    while (typeof(val) != "number" || val < 0 || val > 100) {
-        val = Number(prompt("Please enter a valid number [0,100]: "));
+    let val = Number(prompt("New Dimension [1,100]: "));
+    while (isNaN(val) || val < 1 || val > 100) {
+        val = Number(prompt("Please enter a valid number [1,100]: "));
     }
     while (squareContainer.firstChild) {
         squareContainer.firstChild.remove()
