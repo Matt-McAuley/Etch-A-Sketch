@@ -1,0 +1,28 @@
+body {
+    width: 100vw;
+    height: 95vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#squares {
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#rowDiv {
+    width: 70vh;
+    flex-grow: 1;
+    display: flex;
+    justify-content: space-between;
+}
+
+#square {
+    flex-grow: 1;
+    padding: 20px;
+    border: 1px solid black;
+}
