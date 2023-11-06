@@ -23,9 +23,7 @@ const dimensionButton = document.querySelector("button");
 dimensionButton.addEventListener('click', () => {
     let val = Number(prompt("New Dimension [0,100]: "));
     while (typeof(val) != "number" || val < 0 || val > 100) {
-        console.log(typeof(val));
-        console(val);
-        val = prompt("Please enter a valid number [0,100]: ");
+        val = Number(prompt("Please enter a valid number [0,100]: "));
     }
     while (squareContainer.firstChild) {
         squareContainer.firstChild.remove()
