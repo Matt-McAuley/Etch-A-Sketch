@@ -1,3 +1,4 @@
+//Grid creation
 const squareContainer = document.querySelector("#squares");
 for (let row = 0; row < 15; row++) {
     let rowDiv = document.createElement("div")
@@ -7,5 +8,10 @@ for (let row = 0; row < 15; row++) {
         let square = document.createElement("div");
         rowDiv.appendChild(square)
         square.setAttribute("id", "square")
+        square.addEventListener('mouseover', function(event) {
+            const source = event.target;
+            source.style.backgroundColor = "blue";
+            console.log("happened");
+        });
     }
 }
