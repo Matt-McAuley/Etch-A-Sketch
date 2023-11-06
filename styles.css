@@ -2,6 +2,7 @@ body {
     width: 100vw;
     height: 95vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
@@ -24,4 +25,12 @@ body {
 #square {
     flex-grow: 1;
     border: 1px solid black;
+}
+
+button {
+    font-size: 30px;
+    background-color: aqua;
+    color: black;
+    border-radius: 12px;
+    margin-bottom: 60px;
 }
