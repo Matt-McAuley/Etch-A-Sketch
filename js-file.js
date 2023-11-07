@@ -11,6 +11,9 @@ body.addEventListener('mousedown', () => {
 body.addEventListener('mouseup', () => {
     isMousePressed = false;
 });
+body.addEventListener('drag', () => {
+    console.log("dragging");
+})
 
 function createGrid(dimension) {
     for (let row = 0; row < dimension; row++) {
@@ -26,7 +29,6 @@ function createGrid(dimension) {
             square.addEventListener('mousemove', function(event) {
                 const source = event.target;
                 if (isMousePressed) {
-                    console.log(light);
                     if (light > 0) {
                         light = light-5;
                     }
