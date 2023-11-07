@@ -42,7 +42,6 @@ h1 {
 
 #square {
     flex-grow: 1;
-    border: 1px solid black;
 }
 
 button {
