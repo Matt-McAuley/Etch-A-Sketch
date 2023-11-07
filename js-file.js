@@ -3,6 +3,7 @@ const squareContainer = document.querySelector("#squares");
 createGrid(30);
 
 const body = document.querySelector("body");
+body.draggable = false;
 let isMousePressed = false;
 body.addEventListener('mousedown', () => {
     isMousePressed = true;
@@ -21,15 +22,23 @@ function createGrid(dimension) {
             rowDiv.appendChild(square)
             square.setAttribute("id", "square")
             //change square colors when hovered over
+            let light = 100;
             square.addEventListener('mousemove', function(event) {
+                const source = event.target;
                 if (isMousePressed) {
-                    const source = event.target;
-                    source.style.backgroundColor = "blue";
+                    console.log(light);
+                    if (light > 0) {
+                        light = light-5;
+                    }
+                    source.style.cssText = "background-color: hsl(0, 0%, "+ String(light) +"%)";
                 }
             });
             square.addEventListener('click', function(event) {
                     const source = event.target;
-                    source.style.backgroundColor = "blue";
+                    if (light > 0) {
+                        light = light-20;
+                    }
+                    source.style.cssText = "background-color: hsl(0, 0%, "+ String(light) +"%)";
             });
         }
     }
