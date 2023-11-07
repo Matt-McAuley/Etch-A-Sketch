@@ -21,11 +21,15 @@ function createGrid(dimension) {
             rowDiv.appendChild(square)
             square.setAttribute("id", "square")
             //change square colors when hovered over
-            square.addEventListener('mouseover', function(event) {
+            square.addEventListener('mousemove', function(event) {
                 if (isMousePressed) {
                     const source = event.target;
                     source.style.backgroundColor = "blue";
                 }
+            });
+            square.addEventListener('click', function(event) {
+                    const source = event.target;
+                    source.style.backgroundColor = "blue";
             });
         }
     }
