@@ -2,11 +2,12 @@
 const squareContainer = document.querySelector("#squares");
 createGrid(30);
 
+const body = document.querySelector("body");
 let isMousePressed = false;
-squareContainer.addEventListener('mousedown', () => {
+body.addEventListener('mousedown', () => {
     isMousePressed = true;
 });
-squareContainer.addEventListener('mouseup', () => {
+body.addEventListener('mouseup', () => {
     isMousePressed = false;
 });
 
