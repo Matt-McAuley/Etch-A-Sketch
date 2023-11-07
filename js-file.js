@@ -35,9 +35,10 @@ function createGrid(dimension) {
     }
 }
 
+let val;
 const dimensionButton = document.querySelector("#dimension");
 dimensionButton.addEventListener('click', () => {
-    let val = Number(prompt("New Dimension [1,100]: "));
+    val = Number(prompt("New Dimension [1,100]: "));
     while (isNaN(val) || val < 1 || val > 100) {
         val = Number(prompt("Please enter a valid number [1,100]: "));
     }
@@ -49,10 +50,8 @@ dimensionButton.addEventListener('click', () => {
 
 const clearButton = document.querySelector("#clear");
 clearButton.addEventListener('click', () => {
-    rows = clearButton.children
-    for (let i = 0; i < rows.length; i++) {
-        for (let j = 0; j < rows[i].length; j++) {
-            rows[i][j].style.backgroundColor = "white";
-        }
+    squares = document.querySelectorAll("#square");
+    for (let i = 0; i < squares.length; i++) {
+        squares[i].style.backgroundColor = "white";
     }
 });
