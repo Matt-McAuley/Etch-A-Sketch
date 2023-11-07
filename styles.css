@@ -81,3 +81,16 @@ button {
     border-radius: 12px;
     outline: 1px solid black;
 }
+
+.slidecontainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#slidervalue {
+    font-family: FjallaOne;
+    padding: 8px;
+    font-size: 20px;
+}
