@@ -54,19 +54,21 @@ button {
     margin: 30px;
     font-family: FjallaOne;
     cursor: pointer;
+    padding: 3px 18px;
 }
 
 #controls {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
+    width: 70vh;
 }
 
 .slider {
     -webkit-appearance: none;
     appearance: none;
-    width: 140px;
-    height: 10px;
+    width: 160px;
+    height: 13px;
     background: white;
     border-radius: 12px;
 }
@@ -92,5 +94,5 @@ button {
 #slidervalue {
     font-family: FjallaOne;
     padding: 8px;
-    font-size: 20px;
+    font-size: 25px;
 }
