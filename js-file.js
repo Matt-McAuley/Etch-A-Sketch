@@ -34,8 +34,8 @@ function createGrid(dimension) {
                 const source = event.target;
                 if (!(solidColor)) {
                     if (isMousePressed) {
-                        if (source.value-3*(sliderValue/50) > hslColor.l) {
-                            source.value = source.value-3*(sliderValue/50);
+                        if (source.value-3*(sliderValue/35) > hslColor.l) {
+                            source.value = source.value-3*(sliderValue/35);
                         }
                         source.style.cssText = "background-color: hsl("+hslColor.h+", "+hslColor.s+"%, "+String(source.value)+"%)";
                     }
