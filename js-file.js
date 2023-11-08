@@ -3,6 +3,7 @@ const squareContainer = document.querySelector("#squares");
 createGrid(30);
 
 const body = document.querySelector("body");
+const html = document.querySelector("html");
 body.draggable = false;
 let isMousePressed = false;
 body.addEventListener('mousedown', () => {
@@ -11,9 +12,10 @@ body.addEventListener('mousedown', () => {
 body.addEventListener('mouseup', () => {
     isMousePressed = false;
 });
-body.addEventListener('drag', () => {
-    console.log("dragging");
-})
+
+html.ondragstart = () => {
+    return false;
+}
 
 function createGrid(dimension) {
     for (let row = 0; row < dimension; row++) {
