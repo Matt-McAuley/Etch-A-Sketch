@@ -28,19 +28,31 @@ function createGrid(dimension) {
             let light = 100;
             square.addEventListener('mousemove', function(event) {
                 const source = event.target;
-                if (isMousePressed) {
-                    if (light > 0) {
-                        light = light-5;
+                if (!(solidColor)) {
+                    if (isMousePressed) {
+                        if (light > 0) {
+                            light = light-5;
+                        }
+                        source.style.cssText = "background-color: hsl(0, 0%, "+ String(light) +"%)";
                     }
-                    source.style.cssText = "background-color: hsl(0, 0%, "+ String(light) +"%)";
+                }
+                else {
+                    if (isMousePressed) {
+                        source.style.cssText = "background-color: black";
+                    }
                 }
             });
             square.addEventListener('click', function(event) {
                     const source = event.target;
-                    if (light > 0) {
-                        light = light-20;
+                    if (!(solidColor)) {
+                        if (light > 0) {
+                            light = light-20;
+                        }
+                        source.style.cssText = "background-color: hsl(0, 0%, "+ String(light) +"%)";
                     }
-                    source.style.cssText = "background-color: hsl(0, 0%, "+ String(light) +"%)";
+                    else {
+                            source.style.cssText = "background-color: black";
+                    }
             });
         }
     }
@@ -66,4 +78,16 @@ slider.addEventListener('mouseup', (event) => {
 slider.addEventListener('input', (event) => {
     let sliderValue = event.target.value;
     dimensionValue.textContent = "Dimension: " + sliderValue;
+})
+
+let solidColor = false;
+const select = document.querySelector("select");
+select.addEventListener('change', (event) => {
+    let colorChoice = event.target.value;
+    if (colorChoice == "solid") {
+        solidColor = true;
+    }
+    else {
+        solidColor = false;
+    }
 })
