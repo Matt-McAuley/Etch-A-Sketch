@@ -7,9 +7,9 @@ using Javascript, HTML, and CSS.
 ![Screenshot](./images/etch-a-sketch.png)
 
 # URL
-matt-mcauley.github.io/etch-a-sketch
+https://matt-mcauley.github.io/etch-a-sketch
 
 # Author
-Matthew McAuley
-mwm223@cornell.edu
-https://github.com/matt-mcauley/etch-a-sketch
+Matthew McAuley  
+mwm223@cornell.edu  
+https://github.com/matt-mcauley/etch-a-sketch  
