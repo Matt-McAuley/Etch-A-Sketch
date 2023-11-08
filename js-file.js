@@ -46,18 +46,6 @@ function createGrid(dimension) {
     }
 }
 
-// const dimensionButton = document.querySelector("#dimension");
-// dimensionButton.addEventListener('click', () => {
-//     let val = Number(prompt("New Dimension [1,100]: "));
-//     while (isNaN(val) || val < 1 || val > 100) {
-//         val = Number(prompt("Please enter a valid number [1,100]: "));
-//     }
-//     while (squareContainer.firstChild) {
-//         squareContainer.firstChild.remove()
-//     }
-//     createGrid(val);
-// });
-
 const clearButton = document.querySelector("#clear");
 clearButton.addEventListener('click', () => {
     squares = document.querySelectorAll("#square");
