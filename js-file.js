@@ -17,6 +17,7 @@ html.ondragstart = () => {
     return false;
 }
 
+let hslColor = {h:0, s:0, l:0}
 function createGrid(dimension) {
     for (let row = 0; row < dimension; row++) {
         let rowDiv = document.createElement("div")
@@ -27,33 +28,32 @@ function createGrid(dimension) {
             rowDiv.appendChild(square)
             square.setAttribute("id", "square")
             //change square colors when hovered over
-            let light = 100;
             square.addEventListener('mousemove', function(event) {
                 const source = event.target;
                 if (!(solidColor)) {
                     if (isMousePressed) {
-                        if (light > 0) {
-                            light = light-5;
+                        if (hslColor.l > 0) {
+                            hslColor.l = hslColor.l-5;
                         }
-                        source.style.cssText = "background-color: hsl(0, 0%, "+ String(light) +"%)";
+                        source.style.cssText = "background-color: hsl(0, 0%, "+ String(hslColor.l) +"%)";
                     }
                 }
                 else {
                     if (isMousePressed) {
-                        source.style.cssText = "background-color: black";
+                        source.style.cssText = "background-color: hsl("+hslColor.h+", "+hslColor.s+"%, "+hslColor.l+"%)";
                     }
                 }
             });
             square.addEventListener('click', function(event) {
                     const source = event.target;
                     if (!(solidColor)) {
-                        if (light > 0) {
-                            light = light-20;
+                        if (hslColor.l > 0) {
+                            hslColor.l = hslColor.l-20;
                         }
-                        source.style.cssText = "background-color: hsl(0, 0%, "+ String(light) +"%)";
+                        source.style.cssText = "background-color: hsl(0, 0%, "+ String(hslColor.l) +"%)";
                     }
-                    else {
-                            source.style.cssText = "background-color: black";
+                        else {
+                        source.style.cssText = "background-color: hsl("+hslColor.h+", "+hslColor.s+"%, "+hslColor.l+"%)";
                     }
             });
         }
@@ -88,8 +88,51 @@ select.addEventListener('change', (event) => {
     let colorChoice = event.target.value;
     if (colorChoice == "solid") {
         solidColor = true;
+        hslColor.l = originalLight;
     }
     else {
         solidColor = false;
+        hslColor.l = originalLight-30;
     }
 })
+
+const colorSelector = document.querySelector("#color");
+let originalLight;
+colorSelector.addEventListener('change', (event) => {
+    let hexColor = event.target.value;
+    hslColor = hexToHSL(hexColor);
+    originalLight = hslColor.l;
+})
+
+//Taken from online
+function hexToHSL(hex) {
+    const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+
+    let r = parseInt(result[1], 16);
+    let g = parseInt(result[2], 16);
+    let b = parseInt(result[3], 16);
+
+    r /= 255, g /= 255, b /= 255;
+    let max = Math.max(r, g, b), min = Math.min(r, g, b);
+    let h, s, l = (max + min) / 2;
+
+    if (max == min){
+        h = s = 0; // achromatic
+    } else {
+        var d = max - min;
+        s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
+        switch(max) {
+            case r: h = (g - b) / d + (g < b ? 6 : 0); break;
+            case g: h = (b - r) / d + 2; break;
+            case b: h = (r - g) / d + 4; break;
+        }
+        
+        h /= 6;
+    }
+
+    h = Math.round(h*360);
+    s = Math.round(s*100);
+    l = Math.round(l*100);
+
+    return { h, s, l };
+}
