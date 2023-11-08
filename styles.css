@@ -42,6 +42,7 @@ h1 {
 
 #square {
     flex-grow: 1;
+    cursor: pointer;
 }
 
 button {
@@ -52,4 +53,44 @@ button {
     border-radius: 12px;
     margin: 30px;
     font-family: FjallaOne;
+    cursor: pointer;
+}
+
+#controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.slider {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 140px;
+    height: 10px;
+    background: white;
+    border-radius: 12px;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background: turquoise;
+    cursor: pointer;
+    border-radius: 12px;
+    outline: 1px solid black;
+}
+
+.slidecontainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#slidervalue {
+    font-family: FjallaOne;
+    padding: 8px;
+    font-size: 20px;
 }
