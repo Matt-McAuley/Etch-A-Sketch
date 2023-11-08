@@ -28,15 +28,15 @@ function createGrid(dimension) {
             rowDiv.appendChild(square)
             square.setAttribute("id", "square")
             //change square colors when hovered over
-            let light = 100;
+            square.value = 100;
             square.addEventListener('mousemove', function(event) {
                 const source = event.target;
                 if (!(solidColor)) {
                     if (isMousePressed) {
-                        if (light > hslColor.l) {
-                            light = light-3;
+                        if (source.value > hslColor.l) {
+                            source.value = source.value-3;
                         }
-                        source.style.cssText = "background-color: hsl("+hslColor.h+", "+hslColor.s+"%, "+String(light)+"%)";
+                        source.style.cssText = "background-color: hsl("+hslColor.h+", "+hslColor.s+"%, "+String(source.value)+"%)";
                     }
                 }
                 else {
@@ -66,6 +66,7 @@ clearButton.addEventListener('click', () => {
     squares = document.querySelectorAll("#square");
     for (let i = 0; i < squares.length; i++) {
         squares[i].style.backgroundColor = "white";
+        squares[i].value = 100;
     }
 });
 
