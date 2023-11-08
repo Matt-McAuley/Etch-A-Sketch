@@ -9,14 +9,18 @@
     <link rel="icon" type="images/x-icon" href="./images/favicon.ico">
 </head>
 <body draggable="false">
-    <h1>Etch-A-Sketch!</h1>
+    <h1>Etch-A-Sketch</h1>
 
     <div id="squares"></div>
 
     <div id="controls">
         <div class="slidecontainer">
             <input type="range" min="10" max="100" value="30" class="slider">
-            <div id="slidervalue">Dimension: 30</div>
+            <div class="controlwords" id="slidervalue">Dimension: 30</div>
+        </div>
+        <div id="colorselect">
+        <input type="color" name="color" id="color">
+        <div class="controlwords">Color: </div>
         </div>
         <select name="drawing" id="drawing">
             <option value="progressive">Progresssive Color</option>
