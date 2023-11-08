@@ -17,6 +17,7 @@ html.ondragstart = () => {
     return false;
 }
 
+let sliderValue = 30;
 let hslColor = {h:0, s:0, l:0}
 function createGrid(dimension) {
     for (let row = 0; row < dimension; row++) {
@@ -33,8 +34,8 @@ function createGrid(dimension) {
                 const source = event.target;
                 if (!(solidColor)) {
                     if (isMousePressed) {
-                        if (source.value > hslColor.l) {
-                            source.value = source.value-3;
+                        if (source.value-3*(sliderValue/50) > hslColor.l) {
+                            source.value = source.value-3*(sliderValue/50);
                         }
                         source.style.cssText = "background-color: hsl("+hslColor.h+", "+hslColor.s+"%, "+String(source.value)+"%)";
                     }
@@ -48,10 +49,10 @@ function createGrid(dimension) {
             square.addEventListener('click', function(event) {
                     const source = event.target;
                     if (!(solidColor)) {
-                        if (light > hslColor.l) {
-                            light = light-10;
+                        if (source.value-20 > hslColor.l) {
+                            source.value = source.value-20;
                         }
-                        source.style.cssText = "background-color: hsl("+hslColor.h+", "+hslColor.s+"%, "+String(light)+"%)";
+                        source.style.cssText = "background-color: hsl("+hslColor.h+", "+hslColor.s+"%, "+String(source.value)+"%)";
                     }
                         else {
                         source.style.cssText = "background-color: hsl("+hslColor.h+", "+hslColor.s+"%, "+hslColor.l+"%)";
@@ -73,7 +74,7 @@ clearButton.addEventListener('click', () => {
 const slider = document.querySelector(".slider");
 const dimensionValue = document.querySelector("#slidervalue");
 slider.addEventListener('mouseup', (event) => {
-    let sliderValue = event.target.value;
+    sliderValue = event.target.value;
     while (squareContainer.firstChild) {
         squareContainer.firstChild.remove()
     }
