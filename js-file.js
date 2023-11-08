@@ -28,14 +28,15 @@ function createGrid(dimension) {
             rowDiv.appendChild(square)
             square.setAttribute("id", "square")
             //change square colors when hovered over
+            let light = 100;
             square.addEventListener('mousemove', function(event) {
                 const source = event.target;
                 if (!(solidColor)) {
                     if (isMousePressed) {
-                        if (hslColor.l > 0) {
-                            hslColor.l = hslColor.l-5;
+                        if (light > hslColor.l) {
+                            light = light-1;
                         }
-                        source.style.cssText = "background-color: hsl(0, 0%, "+ String(hslColor.l) +"%)";
+                        source.style.cssText = "background-color: hsl("+hslColor.h+", "+hslColor.s+"%, "+String(light)+"%)";
                     }
                 }
                 else {
@@ -47,10 +48,10 @@ function createGrid(dimension) {
             square.addEventListener('click', function(event) {
                     const source = event.target;
                     if (!(solidColor)) {
-                        if (hslColor.l > 0) {
-                            hslColor.l = hslColor.l-20;
+                        if (light > hslColor.l) {
+                            light = light-10;
                         }
-                        source.style.cssText = "background-color: hsl(0, 0%, "+ String(hslColor.l) +"%)";
+                        source.style.cssText = "background-color: hsl("+hslColor.h+", "+hslColor.s+"%, "+String(light)+"%)";
                     }
                         else {
                         source.style.cssText = "background-color: hsl("+hslColor.h+", "+hslColor.s+"%, "+hslColor.l+"%)";
@@ -88,11 +89,9 @@ select.addEventListener('change', (event) => {
     let colorChoice = event.target.value;
     if (colorChoice == "solid") {
         solidColor = true;
-        hslColor.l = originalLight;
     }
     else {
         solidColor = false;
-        hslColor.l = originalLight-30;
     }
 })
 
