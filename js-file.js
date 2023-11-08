@@ -34,7 +34,7 @@ function createGrid(dimension) {
                 if (!(solidColor)) {
                     if (isMousePressed) {
                         if (light > hslColor.l) {
-                            light = light-1;
+                            light = light-3;
                         }
                         source.style.cssText = "background-color: hsl("+hslColor.h+", "+hslColor.s+"%, "+String(light)+"%)";
                     }
