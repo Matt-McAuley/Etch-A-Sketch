@@ -1,1 +1,1 @@
-https://matt-mcauley.github.io/etch-a-sketch
+https://matt-mcauley.github.io/projects/etch-a-sketch
