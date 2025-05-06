@@ -18,7 +18,19 @@ The website is hosted on [GitHub Pages](https://matt-mcauley.github.io/Etch-A-Sk
 ## Images
 
 #### Home Page
-<img src="https://matt-mcauley.github.io/assets/img/Etch-A-Sketch/home.png" alt="Home Page Image" style="width: 95%">
+<img src="https://mattmcauley.com/assets/projects/Etch-A-Sketch/home.png" alt="Image" style="width: 95%">
+
+#### Progressive Color
+<img src="https://mattmcauley.com/assets/projects/Etch-A-Sketch/progressive.png" alt="Image" style="width: 95%">
+
+#### Solid Color
+<img src="https://mattmcauley.com/assets/projects/Etch-A-Sketch/solid.png" alt="Image" style="width: 95%">
+
+#### Zoomed Out
+<img src="https://mattmcauley.com/assets/projects/Etch-A-Sketch/zoomout.png" alt="Image" style="width: 95%">
+
+#### Zoomed In
+<img src="https://mattmcauley.com/assets/projects/Etch-A-Sketch/zoomin.png" alt="Image" style="width: 95%">
 
 ## Authors
 
